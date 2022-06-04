@@ -1,0 +1,24 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class RectButton extends StatelessWidget {
+  String name;
+  GestureTapCallback onTap;
+
+  RectButton(this.name, this.onTap);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+          width: 50,
+          height: 50,
+          child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.black),
+              ),
+              child: Center(child: Text(this.name, style: TextStyle(fontWeight: FontWeight.normal, fontSize: 32),)))),
+    );
+  }
+}
